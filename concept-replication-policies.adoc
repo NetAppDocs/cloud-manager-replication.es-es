@@ -1,0 +1,60 @@
+---
+sidebar: sidebar 
+permalink: concept-replication-policies.html 
+keywords: replication policy, policy, replication, replicating, snapmirror, snapvault, data replication, disaster recovery, DR 
+summary: Puede replicar datos entre entornos de trabajo de BlueXP. Puede elegir una replicación de datos en una sola vez para mover datos desde y hacia el cloud, o una programación recurrente para la recuperación ante desastres y la retención a largo plazo. 
+---
+= Obtenga información acerca de las políticas de replicación
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Es posible que necesite ayuda para elegir una política de replicación al configurar la replicación de datos en BlueXP. Una política de replicación define cómo el sistema de almacenamiento replica los datos de un volumen de origen a un volumen de destino.
+
+
+
+== Lo que hacen las políticas de replicación
+
+El sistema operativo ONTAP crea automáticamente backups llamados copias snapshot. Una copia Snapshot es una imagen de solo lectura de un volumen que captura el estado del sistema de archivos en un momento específico.
+
+Cuando se replican datos entre sistemas, se replican copias Snapshot de un volumen de origen a un volumen de destino. Una política de replicación especifica las copias de Snapshot que se van a replicar del volumen de origen al volumen de destino.
+
+
+TIP: Las normativas de replicación también se conocen como políticas de _protection_ porque se alimentan de las tecnologías SnapMirror y SnapVault, que proporcionan protección de recuperación ante desastres y backup y recuperación de datos de disco a disco.
+
+En la siguiente imagen, se muestra la relación entre las copias Snapshot y las políticas de replicación:
+
+image:diagram_replication_policies.png["En esta ilustración, se muestran copias Snapshot en un volumen de origen y una política de replicación que especifica la replicación de todas las copias Snapshot específicas o del volumen de origen al volumen de destino."]
+
+
+
+== Tipos de políticas de replicación
+
+Existen tres tipos de políticas de replicación:
+
+* Una directiva _Mirror_ replica las copias Snapshot recién creadas en un volumen de destino.
++
+Es posible usar estas copias Snapshot para proteger el volumen de origen como preparación para la recuperación ante desastres o para la replicación de datos que se realiza una vez. Puede activar el volumen de destino para acceder a los datos en cualquier momento.
+
+* Una política de _Backup_ replica copias Snapshot específicas a un volumen de destino y, normalmente, las conserva durante un período de tiempo más largo del que tendría en el volumen de origen.
++
+Puede restaurar datos de estas copias Snapshot cuando se dañen o se pierdan datos, y conservarlas para cumplir los estándares y otros fines relacionados con la regulación.
+
+* Una política de _Mirror and Backup_ proporciona recuperación ante desastres y retención a largo plazo.
++
+Cada sistema incluye una política predeterminada de copia de seguridad y copia de seguridad, que funciona bien en muchas situaciones. Si necesita políticas personalizadas, puede crear propias con System Manager.
+
+
+
+En las siguientes imágenes, se muestra la diferencia entre las políticas de reflejo y backup. Una política de mirroring refleja las copias Snapshot disponibles en el volumen de origen.
+
+image:diagram_replication_snapmirror.png["En esta ilustración, se muestran las copias Snapshot en un volumen de origen y un volumen de destino de mirroring que refleja el volumen de origen."]
+
+Normalmente, una política de backup retiene copias Snapshot durante más tiempo del que se conservan en el volumen de origen:
+
+image:diagram_replication_snapvault.png["En esta ilustración, se muestran copias Snapshot en un volumen de origen y un volumen de destino de backup que incluye más copias de Snapshot porque SnapVault conserva copias Snapshot para retención a largo plazo."]

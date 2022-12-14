@@ -1,0 +1,69 @@
+---
+sidebar: sidebar 
+permalink: whats-new.html 
+keywords: 'what"s new, features, new, release notes, bugs, limitations, known issues, enhancements, fixes' 
+summary: 'Descubra las novedades del servicio de replicación de BlueXP (anteriormente Cloud Manager).' 
+---
+= Lo nuevo
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Descubra las novedades del servicio de replicación de BlueXP (anteriormente Cloud Manager).
+
+
+
+== 18 de septiembre de 2022
+
+
+
+=== FSX para ONTAP a Cloud Volumes ONTAP
+
+Ahora puede replicar datos de un sistema de archivos Amazon FSX para ONTAP en Cloud Volumes ONTAP.
+
+https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.html["Aprenda a configurar la replicación de datos"].
+
+
+
+== 31 de julio de 2022
+
+
+
+=== FSX para ONTAP como origen de datos
+
+Ahora puede replicar datos de un sistema de archivos Amazon FSX para ONTAP en los siguientes destinos:
+
+* Amazon FSX para ONTAP
+* Clúster de ONTAP en las instalaciones
+
+
+https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.html["Aprenda a configurar la replicación de datos"].
+
+
+
+== 2 de septiembre de 2021
+
+
+
+=== Compatibilidad con Amazon FSX para ONTAP
+
+Ahora puede replicar datos desde un sistema Cloud Volumes ONTAP o un clúster de ONTAP en las instalaciones en un sistema de archivos Amazon FSX para ONTAP.
+
+https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.html["Aprenda a configurar la replicación de datos"].
+
+
+
+== 5 de mayo de 2021
+
+
+
+=== Interfaz rediseñada
+
+Hemos rediseñado la pestaña Replication para facilitar su uso y para que coincida con el aspecto actual de la interfaz de usuario de Cloud Manager.
+
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-replication/main/media/replication.gif["Una captura de pantalla de la pestaña replicación rediseñada de Cloud Manager que muestra una lista de relaciones de volúmenes."]
